@@ -8,4 +8,4 @@ Solution of the given equation is
 [Expr3](images/Expr3.png)
 
 
-[Read More](3.Theory.pdf)
+[Read More](doc/3.Theory.pdf)
