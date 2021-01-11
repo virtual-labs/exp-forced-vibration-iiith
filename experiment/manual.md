@@ -14,4 +14,4 @@
 9. Draw the plot between maximum response and frequency ratio.
 
 
-[Read More](3.manual.pdf)
+[Read More](doc/3.manual.pdf)
