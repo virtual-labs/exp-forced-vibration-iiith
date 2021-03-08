@@ -89,25 +89,56 @@
 
 
     const myQuestions = [{
-            question: "1.This is a sample question:", ///// Write the question inside double quotes
+            question: "1. Amplitude of forced vibration depends on initial conditions.:", ///// Write the question inside double quotes
             answers: {
-                a: "This is a sample answer A", ///// Write the option 1 inside double quotes
-                b: "This is a sample answer B", ///// Write the option 2 inside double quotes
+                a: "True", ///// Write the option 1 inside double quotes
+                b: "False", ///// Write the option 2 inside double quotes
             },
-            correctAnswer: "a" ///// Write the correct option inside double quotes
+            correctAnswer: "b" ///// Write the correct option inside double quotes
         },
 
     {
-      question: "<img src='images/8.PNG'><br>Identify the location of Secondary electron detector",  ///// Write the question inside double quotes
+      question: "2. We get peak response when structure is forced to vibrate at its natural frequency.",  ///// Write the question inside double quotes
       answers: {
-        a: "<img src='images/1b.png'>",                  ///// Write the option 1 inside double quotes
-        b: "<img src='images/1a.png'>",                  ///// Write the option 2 inside double quotes
-        c: "<img src='images/1c.PNG'>",      },
-      correctAnswer: "c"                ///// Write the correct option inside double quotes
+        a: "True",                  ///// Write the option 1 inside double quotes
+        b: "False'>",                  ///// Write the option 2 inside double quotes
+       },
+      correctAnswer: "a"                ///// Write the correct option inside double quotes
+    },
+			 
+      question: "3. Amplitude of vibration increasing when frequency ration if greater than 1.",  ///// Write the question inside double quotes
+      answers: {
+        a: "True",                  ///// Write the option 1 inside double quotes
+        b: "False'>",                  ///// Write the option 2 inside double quotes
+       },
+      correctAnswer: "b"                ///// Write the correct option inside double quotes
     },
 
 
-        
+     question: "4. Maximum response of the structure will be different for different earthquakes.",  ///// Write the question inside double quotes
+      answers: {
+        a: "True",                  ///// Write the option 1 inside double quotes
+        b: "False'>",                  ///// Write the option 2 inside double quotes
+       },
+      correctAnswer: "a"                ///// Write the correct option inside double quotes
+    },
+ 
+     question: "5. Undamped structure will become unstable if it is vibrating at resonating frequency.",  ///// Write the question inside double quotes
+      answers: {
+        a: "True",                  ///// Write the option 1 inside double quotes
+        b: "False'>",                  ///// Write the option 2 inside double quotes
+       },
+      correctAnswer: "a"                ///// Write the correct option inside double quotes
+    },
+
+    question: "2. We get peak response when structure is forced to vibrate at its natural frequency.",  ///// Write the question inside double quotes
+      answers: {
+        a: "True",                  ///// Write the option 1 inside double quotes
+        b: "False'>",                  ///// Write the option 2 inside double quotes
+       },
+      correctAnswer: "a"                ///// Write the correct option inside double quotes
+    },
+ 
     ];
 
 
