@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	const restartButton = document.getElementById('restart');
 
 	pauseButton.addEventListener('click', function() { window.clearTimeout(tmHandle); });
-	playButton.addEventListener('click', function() {  window.clearTimeout(tmHandle); tmHandle = setTimeout(draw, 1000 / fps); });
+	playButton.addEventListener('click', function() { window.clearTimeout(tmHandle); tmHandle = setTimeout(draw, 1000 / fps); });
 	restartButton.addEventListener('click', function() {restart();});
 
 	function init()
@@ -249,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		}
 
-		console.log(u_max)
 		drawGraph(time, max_disp, 'timeGraph', 'Time Period', color);
 	}
 
