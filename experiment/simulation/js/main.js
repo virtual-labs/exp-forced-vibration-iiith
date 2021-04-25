@@ -66,36 +66,25 @@ document.addEventListener('DOMContentLoaded', function(){
 		};
 	});
 
-	function logic(obj)
-	{
-		const Wn = Math.sqrt(obj.stiffness / obj.mass), Tn = 2 * Math.PI / Wn;
-		const beta = obj.wbar / Wn;
-		const u_max = (obj.P0 / obj.stiffness)*(1 / (Math.sqrt(Math.pow(1 - Math.pow(beta, 2), 2) + Math.pow((2 * obj.etta * beta), 2))));
-		return u_max;
-	}
-
-	function drawGraph(Xaxis, Yaxis, title, id) {
+	function drawGraph(Xaxis, Yaxis, id, Xlabel, color) {
 		try {
 			// render the plot using plotly
 			const trace1 = {
 				x: Xaxis,
 				y: Yaxis,
-				type: 'scatter'
+				type: 'scatter',
+				mode: 'lines+markers',
+				marker: {
+					color: color
+				}
 			};
 
 			const layout = {
-				title: {
-					text: title,
-					font: {
-						family: 'Courier New, monospace',
-						size: 24
-					},
-				},
 				width: 450,
 				height: 450,
 				xaxis: {
 					title: {
-						text: 'Time',
+						text: Xlabel,
 						font: {
 							family: 'Courier New, monospace',
 							size: 18,
@@ -105,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				},
 				yaxis: {
 					title: {
-						text: 'Displacement',
+						text: 'Maximum Displacement',
 						font: {
 							family: 'Courier New, monospace',
 							size: 18,
@@ -133,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	const ctx = canvas.getContext("2d");
 
 	const fill = "#A9A9A9", border = "black", lineWidth = 1.5, fps = 15;
-	const P0 = 10, scale = 1000000, height = 180, startx = 594, endx = 600, margin = 150, starty = 220, endy = starty + height, change = 2; 
+	const P0 = 10000000, height = 180, startx = 594, endx = 600, margin = 150, starty = 220, endy = starty + height, change = 1; 
 
 	// Input Parameters 
-	let mass = 100000, stiff = 3000000, wbar = 5, etta = 0.05, u_max;
+	let mass = 100000, stiff = 30000000, wbar = 5, etta = 0.05, u_max;
 	let dirn, rod, ground, radius; 
 	init();
 
@@ -145,10 +134,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		ent.forEach(function(val, index){
 			if (flag === 1 && index < 2)
 			{
-				ent[index][0] -= dirn*change;
+				ent[index][0] -= dirn * change;
 			}
 			else{
-				ent[index][0] += dirn*change;
+				ent[index][0] += dirn * change;
 			}
 		});
 	}
@@ -209,17 +198,59 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	function main()
 	{
-		let obj = {
-			'stiffness': stiff,
-			'mass': mass,
-			'P0' : P0,
-			'etta': etta,
-			'wbar' : wbar	
-		};
-		u_max = logic(obj) * scale;
+		let ratio = [], max_disp = [], color = [];
+		const Wn = Math.sqrt(stiff / mass), Tn = 2 * Math.PI / Wn;
+
+		for(let beta = 0; beta <= 1; beta += 0.01)
+		{
+			beta = parseFloat(beta.toFixed(2));
+			ratio.push(beta);
+			max_disp.push((P0 / stiff) * (1 / (Math.sqrt(Math.pow(1 - Math.pow(beta, 2), 2) + Math.pow((2 * etta * beta), 2)))));
+
+			if(etta === 0)
+			{
+				max_disp[max_disp.length - 1] = (P0 / stiff); 
+			}
+
+			if(beta === parseFloat((wbar / Wn).toFixed(2)))
+			{
+				u_max = max_disp[max_disp.length - 1];
+				color.push("red");
+			}
+			else
+			{
+				color.push("blue");
+			}
+		}
+
+		drawGraph(ratio, max_disp, 'freqGraph', 'Frequency Ratio', color);
+
+		let time = [];
+		max_disp = [];
+		color = [];
+		for(let period = 0.1; period <= 4; period += 0.1)
+		{
+			time.push(period);
+			const omega = 2 * Math.PI / period, beta = wbar / omega;
+			max_disp.push((P0 / stiff) * (1 / (Math.sqrt(Math.pow(1 - Math.pow(beta, 2), 2) + Math.pow((2 * etta * beta), 2)))));
+
+			if(etta === 0)
+			{
+				max_disp[max_disp.length - 1] = (P0 / stiff); 
+			}
+
+			if(period === parseFloat(Tn.toFixed(1)))
+			{
+				color.push("red");
+			}
+			else
+			{
+				color.push("blue");
+			}
+		}
+
 		console.log(u_max)
-		// const plotTitle = 'Time Period = ' + Tn.toFixed(3).toString();
-		// drawGraph(time, obj.disp, plotTitle, 'disB' + (index + 1).toString() + 'Plot');
+		drawGraph(time, max_disp, 'timeGraph', 'Time Period', color);
 	}
 
 	main();
