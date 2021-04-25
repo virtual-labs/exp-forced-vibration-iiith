@@ -4,7 +4,7 @@
 2. Observe the response and note down the maximum response.
 3. Repeat the experiment by changing the values of mass and stiffness of the structure. (Note: Change in these values will change the time period of the structure)
 4. Note the maximum response.
-5. Plot the graph between the maximum response and the time period of the structure and compare with given graph. Note that th red dot represents the current simulation values as per the inputs given.
+5. Plot the graph between the maximum response and the time period of the structure and compare with given graph. Note that the red dot represents the current simulation values as per the inputs given.
 
 **Observation 2:** Effect of resonance without damping
 
