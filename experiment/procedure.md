@@ -20,3 +20,6 @@
 3. Response value increases and reaches peak when vibration frequency is nearing natural frequency of the structure even with damping.
 4. Draw the plot between maximum response and frequency ratio and compare with given graph. Note that the red dot represents the current simulation values as per the inputs given.
 
+**Graphs**
+
+1. There are various features available for the graphs such as zoom, etc. The function/feature of each icon above the graphs becomes visible upon hovering over the concerned icon.
