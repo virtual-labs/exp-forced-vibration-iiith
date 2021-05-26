@@ -2,4 +2,11 @@ Forced vibration is the one in which external energy is added to the vibrating s
 
 Examples of this type of vibration include a structure subjected to vibrating machines, vibration of a building during an earthquake or under the action of wind, etc.
 
-[forceVib](images/forceVib.jpg)
+
+<img src="images/forceVib.jpg"> 
+
+To understand the behavior of the single degree of freedom system when time varying force i.e ground motion is applied.
+
+<img src="images/3.jpg"> 
+
+
