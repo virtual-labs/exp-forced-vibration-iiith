@@ -1,11 +1,11 @@
-Forced vibration is of two types:
-1. undamped forced vibration
-2. damped forced vibration
-Undamped forced vibration : The differential governing equation for system without damping is mü + ku = posinωt
-where, m = mass; ü = acceleration; k = stiffness; u = displacement; ωn= natural frequency; po= amplitude of force.
-Solution of the given equation is
+Forced vibration is of two types: <br>
+1. undamped forced vibration<br>
+2. damped forced vibration <br>
+Undamped forced vibration : The differential governing equation for system without damping is mü + ku = posinωt<br>
+where, m = mass; ü = acceleration; k = stiffness; u = displacement; ωn= natural frequency; po= amplitude of force.<br>
+Solution of the given equation is <br>
 
-[Expr3](images/Expr3.png)
 
+<img src="images/Expr3.png"> 
 
 [Read More](doc/3.Theory.pdf)
