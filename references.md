@@ -1,0 +1,4 @@
+- "F.P. Beer and E.R. Johnson, Vector Mechanics for Engineers: Dynamics", McGraw-Hill, 2004.
+- "Dynamics of structures" by Anil K chopra.
+- "W.T. Thomson, Theory of Vibration with Applications", Prentice Hall, 1993.
+- "R.F. Steidel, Jr., An Introduction to Mechanical Vibration", John Wiley, 1989.
