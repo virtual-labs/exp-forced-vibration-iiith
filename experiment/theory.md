@@ -8,4 +8,4 @@ Solution of the given equation is <br>
 
 <img src="images/Expr3.png"> 
 
-[Read More](doc/3.Theory.pdf)
+[Read More](docs/3.Theory.pdf)
