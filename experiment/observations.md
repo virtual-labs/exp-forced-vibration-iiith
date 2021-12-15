@@ -13,6 +13,6 @@
 8. Response value increases and reaches peak when forcing frequency is nearing natural frequency of the structure.
 9. Draw the plot between maximum response and frequency ratio.
 
-[Read More](doc/3.manual.pdf)
+[Read More](docs/3.manual.pdf)
 
 
