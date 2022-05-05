@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	const canvas = document.getElementById("main");
 	canvas.width = 1200;
 	canvas.height = 600;
-	//canvas.style = "border:3px solid";
 	const ctx = canvas.getContext("2d");
 
 	const fill = "#A9A9A9", border = "black", lineWidth = 1.5, fps = 15;
