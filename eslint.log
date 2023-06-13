@@ -1,0 +1,8 @@
+
+/home/runner/work/exp-forced-vibration-iiith/exp-forced-vibration-iiith/experiment/simulation/js/main.js
+  109:4   warning  'Plotly' is not defined                      no-undef
+  123:26  warning  'border' is assigned a value but never used  no-unused-vars
+  268:10  warning  'openGraph' is defined but never used        no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+

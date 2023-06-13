@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css">
+      <link rel="stylesheet" href="css/main.css">
+      <script type="text/javascript" src="js/bulma-slider.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+   </head>
+   <body class="page">
+      <div class="columns is-centered is-flex">
+         <div class="column mt-2 is-10-desktop is-10-tablet is-10-mobile has-text-centered">
+            <div class="column center-content">
+            </div>
+            <div class="columns is-mobile is-centered is-flex">
+               <div id="anime-demo" class="column has-text-centered controls">
+                  <button id="play" class="v-button">Play</button>
+				<button id="pause" class="v-button">Pause</button>
+				<button id="restart" class="v-button">Restart</button>
+               </div>
+            </div>
+         </div>
+      </div>     
+      <div class="columns is-centered is-variable is-flex is-flex-wrap-wrap workspace ">
+         <div id="apparatus" class="column has-text-centered is-2-desktop is-5-tablet is-5-mobile apparatus">
+            <div class="v-datalist-container">
+               <div class="v-datalist-title"  >Input Parameters</div>
+               <div class="column"> 
+                  <p>Mass (kg): <span id="demo_mass"></span></p>
+			      	<input type="range" min="50000" max="250000" value="100000" class="v-slider-full" id="mass">
+			      	<p>Stiffness (kN/m): <span id="demo_stiff"></span></p>
+				     	<input type="range" min="25000000" max="40000000" value="30000000" class="v-slider-full" id="stiff">
+					    <p>Vibration Frequency (rad / sec): <span id="demo_wbar"></span></p>
+					    <input type="range" min="0" max="10" value="5" class="v-slider-full" id="wbar">
+					    <p>ETTA (in %): <span id="demo_etta"></span></p>
+					    <input type="range" min="0" max="20" value="5" class="v-slider-full" id="etta">
+               </div>
+            </div>
+         </div>
+         <div  class="column has-text-centered is-3-desktop is-5-tablet is-6-mobile observations">
+            <div class="v-datalist-container">
+               <div class="v-datalist-title">Observations</div>
+                <div class="v-tabs">
+                  <ul>
+                     <li class="tablinks" onclick="openGraph(event, 'timeGraph')"><a><span>Time/Max Dis</span></a></li>
+                     <li class="tablinks" onclick="openGraph(event, 'freqGraph')"><a><span>FR/Max Dis</span></a></li>
+                  </ul>
+               </div>          
+               <div class="v-datalist-row v-table-wrap">
+               <div id="timeGraph" class="graphcontent v-icon-panel-item">                 
+                  <div class="column">
+                     <div class="content">                        
+                         <p style="font-size: 12px;">NOTE: The red dot represents the computed coordinates as per the current simulation input values.</p>
+                     </div>
+                  </div>
+               </div>                  
+               <div id="freqGraph" class="graphcontent v-icon-panel-item">
+                  <div class="column">
+                     <div class="content">
+                        <p style="font-size: 12px;">NOTE: The red dot represents the computed coordinates as per the current simulation input values.</p>
+                     </div>
+                  </div>
+               </div>    
+            </div>
+          </div>
+         </div>
+    <div class="column has-text-centered is-5-desktop is-10-tablet is-10-mobile simulation" id="container">
+       <div class="v-datalist-container">                    
+          <canvas id="main" class="main" style="max-width: 600px;"></canvas>                       
+        </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/mathjs@9.2.0/lib/browser/math.js"></script>
+	<script src="https://cdn.plot.ly/plotly-1.47.4.min.js"></script>
+	<script src="./js/main.js"></script>      
+   <script src="../assets/js/iframeResize.js"></script></body>
+</html>
+
+
+
